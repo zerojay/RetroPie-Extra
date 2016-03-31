@@ -12,14 +12,14 @@
 rp_module_id="rawgl"
 rp_module_desc="rawgl - Another World Engine"
 rp_module_menus="4+"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali"
 
 function depends_rawgl() {
-    getDepends libsdl1.2-dev libsdl-mixer1.2-dev
+    getDepends g++ libsdl2-dev libsdl2-mixer-dev
 }
 
 function sources_rawgl() {
-    gitPullOrClone "$md_build" https://github.com/vanfanel/rawgl.git
+    gitPullOrClone "$md_build" https://github.com/cyxx/rawgl.git
 }
 
 function build_rawgl() {
@@ -34,6 +34,6 @@ function configure_rawgl() {
     mkRomDir "ports"
     mkRomDir "ports/$md_id"
 
-    addPort "$md_id" "rawgl" "rawgl - Another World Engine" "$md_inst/rawgl --datapath=$romdir/ports/$md_id --language=us --render=original --aspect=true --full=true"
+    addPort "$md_id" "rawgl" "Another World" "$md_inst/rawgl --datapath=$romdir/ports/$md_id --language=us --render=original --fullscreen-ar"
     __INFMSGS+=("Please copy your Another World data files to $romdir/ports/$md_id before running the game.")
 }
