@@ -27,13 +27,19 @@ function install_kodi() {
 }
 
 function configure_kodi() {
-    if [[ ! -f /etc/udev/rules.d/99-input.rules ]]; then
-        echo 'SUBSYSTEM=="input", GROUP="input", MODE="0660"' > /etc/udev/rules.d/99-input.rules
-    fi
+    echo 'SUBSYSTEM=="input", GROUP="input", MODE="0660"' > /etc/udev/rules.d/99-input.rules
 
-    # we launch directly rather than from roms section now
-    rm -f "$romdir/ports/Kodi.sh"
+    mkRomDir "kodi"
+
+    cat > "$romdir/kodi/Kodi.sh" << _EOF_
+#!/bin/bash
+/opt/retropie/supplementary/runcommand/runcommand.sh 0 "kodi-standalone" "kodi"
+_EOF_
+
+    chmod +x "$romdir/kodi/Kodi.sh"
+
+    # remove the repo so it doesnt conflict with other repositories
     rm /etc/apt/sources.list.d/pipplware_jessie.list
 
-    addDirectLaunch "$md_id" "Kodi" "kodi-standalone"
+    setESSystem 'Kodi' 'kodi' '~/RetroPie/roms/kodi' '.sh .SH' '%ROM%' 'pc' 'kodi'
 }
