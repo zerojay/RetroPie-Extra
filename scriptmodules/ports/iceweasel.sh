@@ -23,7 +23,7 @@ function install_iceweasel() {
 }
 
 function configure_iceweasel() {
-   #mkdir -p "$md_inst"
+    mkdir -p "$md_inst"
     cat >"$md_inst/iceweasel.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
