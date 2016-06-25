@@ -14,7 +14,7 @@ rp_module_desc="GameMaker - Games for the Raspberry Pi"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 
-function install_gamemaker() {
+function sources_gamemaker() {
 # Install They Need To Be Fed Game
 wget -O- -q https://www.yoyogames.com/download/pi/tntbf | tar -xvz -C "$md_inst"
 # Install Super Crate Box Game
