@@ -15,7 +15,7 @@ rp_module_help="The original Cave Story game files are automatically installed t
 rp_module_section="opt"
 
 function depends_nxengine() {
-    getDepends libsdl-ttf2.0-0 libsdl1.2
+    getDepends libsdl-ttf2.0-dev libsdl1.2-dev
 }
 
 function sources_nxengine() {
