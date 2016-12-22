@@ -20,7 +20,7 @@ function depends_nxengine() {
 
 function sources_nxengine() {
     if isPlatform "rpi"; then 
-        wget -O- -q http://www.cavestory.org/downloads/pi-NXEngine-master.zip
+        wget -O pi-NXEngine-master.zip "http://www.cavestory.org/downloads/pi-NXEngine-master.zip"
         unzip -oj pi-NXEngine-master.zip -d "$md_inst"
         rm pi-NXEngine-master.zip
         cd "$md_inst"
@@ -36,7 +36,7 @@ function sources_nxengine() {
 
 function install_bin_nxengine() {
     if isPlatform "rpi"; then
-        wget -O- -q http://www.sheasilverman.com/rpi/raspbian/installer/cavestory.zip
+        wget -O cavestory.zip "http://www.sheasilverman.com/rpi/raspbian/installer/cavestory.zip"
         unzip -oj cavestory.zip -d "$md_inst"
         rm cavestory.zip
     fi
