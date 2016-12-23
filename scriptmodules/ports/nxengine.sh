@@ -27,6 +27,10 @@ function build_nxengine() {
     make
 }
 
+function install_nxengine() {
+    md_ret_files=('nx')
+}
+
 function configure_nxengine() {
     addPort "$md_id" "cavestory" "Cave Story" "$md_inst/nx"
 }
