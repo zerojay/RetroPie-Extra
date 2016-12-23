@@ -19,12 +19,10 @@ function depends_nxengine() {
 }
 
 function sources_nxengine() {
-    wget -O- -q http://nxengine.sourceforge.net/dl/nx-src-1006.tar.bz2 | tar -xvj --strip-components=1 -C "$md_inst"
-    rm nx-src-1006.tar.bz2
+    wget -O- -q http://nxengine.sourceforge.net/dl/nx-src-1006.tar.bz2 | tar -xvj --strip-components=1
 }
 
 function build_nxengine() {
-    cd "$md_inst"
     make clean
     make
 }
