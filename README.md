@@ -79,6 +79,7 @@ In the dialog box that comes up, you can select which users are allowed to use t
 - [X] - manaplus.sh - 2D MMORPG client - Tested and works well, requires mouse.  
 - [X] - maelstrom.sh - Classic Mac Asteroids Remake - Tested and works well, button configuration screen may crash.
 - [X] - mayhem.sh - Remake of the Amiga game - Tested and works well.
+- [X] - nxengine.sh - The standalone version of the open-source clone/rewrite of Cave Story - Tested and works well.
 - [X] - pingus.sh - Lemmings clone - Tested and works well, requires mouse.  
 - [X] - rawgl.sh - Another World source port - Tested, occasionally crashes when button held when switching scenes?  
 - [X] - reminiscence.sh - Flashback engine clone - Tested and works well.   
