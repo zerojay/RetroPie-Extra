@@ -11,7 +11,7 @@
 
 rp_module_id="gnash"
 rp_module_desc="gnash - Adobe Flash SWF Player"
-rp_module_help="ROM Extensions: .swf\n\nCopy your Flash games to $romdir/flash\n\nYou need to set video mode to CEA-1 in Runcommand."
+rp_module_help="ROM Extensions: .swf\n\nCopy your Flash games to $romdir/flash"
 rp_module_licence="GPL3 http://git.savannah.gnu.org/cgit/gnash.git/tree/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
