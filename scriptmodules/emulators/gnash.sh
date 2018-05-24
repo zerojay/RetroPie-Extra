@@ -28,5 +28,5 @@ function configure_gnash() {
 	mkRomDir "flash"
 	addEmulator 1 "$md_id" "flash" "sudo xinit -e 'gnash %ROM%  -j 640 -k 480 --hide-menubar' -- :0"
 	addSystem "flash"
-	echo 'gnash = "CEA-1"' >> $md_conf_root/all/videomodes.cfg
+	grep -qF 'gnash = "CEA-1"' $md_conf_root/all/videomodes.cfg || echo 'gnash = "CEA-1"' >> $md_conf_root/all/videomodes.cfg
 }
