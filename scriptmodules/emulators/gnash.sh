@@ -26,7 +26,8 @@ function install_bin_gnash() {
 
 function configure_gnash() {
 	mkRomDir "flash"
-	addEmulator 1 "$md_id" "flash" "sudo xinit -e 'gnash %ROM%  -j 640 -k 480 --hide-menubar' -- :0"
+	addEmulator 1 "$md_id" "flash" "sudo xinit -e 'gnash -j 640 -k 480 --hwaccel vaapi --hide-menubar %ROM%' -- :0"
 	addSystem "flash"
 	grep -qF 'gnash = "CEA-1"' $md_conf_root/all/videomodes.cfg || echo 'gnash = "CEA-1"' >> $md_conf_root/all/videomodes.cfg
+	sudo sed -i 's/set quality -1/set quality 0/g' /root/.gnashrc
 }
