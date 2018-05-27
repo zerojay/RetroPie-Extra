@@ -11,8 +11,8 @@
 
 rp_module_id="gnash"
 rp_module_desc="gnash - Adobe Flash SWF Player"
-rp_module_help="ROM Extensions: .swf\n\nCopy your Flash games to $romdir/flash"
-rp_module_licence="GPL3 http://git.savannah.gnu.org/cgit/gnash.git/tree/COPYING"
+rp_module_help="ROM Extensions: .swf\n\nCopy your Flash games to $romdir/flash\n\nTo change resolution, open emulators.cfg and add parameters -j and -k with width and height values.\n\nSetting video mode to CEA-1 in runcommand and setting -j and -k to 640x480 yields best performance at the cost of image quality."
+rp_module_licence="GPL3 https://github.com/strk/gnash/blob/master/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
 
@@ -26,8 +26,7 @@ function install_bin_gnash() {
 
 function configure_gnash() {
 	mkRomDir "flash"
-	addEmulator 1 "$md_id" "flash" "sudo xinit -e 'gnash -j 640 -k 480 --hwaccel vaapi --hide-menubar %ROM%' -- :0"
+	addEmulator 1 "$md_id" "flash" "sudo xinit -e 'gnash %ROM% --hwaccel vaapi --hide-menubar' -- :0"
 	addSystem "flash"
-	grep -qF 'gnash = "CEA-1"' $md_conf_root/all/videomodes.cfg || echo 'gnash = "CEA-1"' >> $md_conf_root/all/videomodes.cfg
 	sudo sed -i 's/set quality -1/set quality 0/g' /root/.gnashrc
 }
