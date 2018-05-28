@@ -17,7 +17,8 @@ rp_module_section="exp"
 rp_module_flags="!mali !kms"
 
 function depends_gnash() {
-	getDepends xinit
+	getDepends xinit xorg
+	sudo chmod ug+s /usr/lib/xorg/Xorg #Fixes sudo permissions bug for X
 }
 
 function install_bin_gnash() {
@@ -26,7 +27,6 @@ function install_bin_gnash() {
 
 function configure_gnash() {
 	mkRomDir "flash"
-	addEmulator 1 "$md_id" "flash" "sudo xinit -e 'gnash %ROM% --hwaccel vaapi --hide-menubar' -- :0"
+	addEmulator 1 "$md_id" "flash" "xinit -e 'gnash --hwaccel vaapi --hide-menubar %ROM%'"
 	addSystem "flash"
-	sudo sed -i 's/set quality -1/set quality 0/g' /root/.gnashrc
 }
