@@ -15,6 +15,7 @@ rp_module_help="Because this uses X, if you just get a black screen or you retur
 rp_module_licence="GPL2 https://www.gnu.org/licenses/gpl-2.0.txt"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['http://www.netsurf-browser.org/']
 
 function install_bin_netsurf() {
     aptInstall netsurf xserver-xorg-legacy xdg-utils matchbox

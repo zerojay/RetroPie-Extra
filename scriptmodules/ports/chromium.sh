@@ -15,6 +15,7 @@ rp_module_licence="MIT https://raw.githubusercontent.com/chromium/chromium/trunk
 rp_module_help="If Chromium crashes back to emulationstation, it may be because the user you are running as does not have permission to launch X on its own. You can fix this by running 'dpkg-reconfigure x11-common' as root and then selecting $user or 'Anybody'."
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://www.github.com/chromium/chromium']
 
 function depends_chromium() {
     if [[ "$__raspbian_ver" -lt 8 ]]; then

@@ -14,6 +14,7 @@ rp_module_desc="lbreakout2 - Open Source Breakout game"
 rp_module_licence="GPL2 https://sourceforge.net/p/lgames/code/HEAD/tree/trunk/lbreakout2/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['http://lgames.sourceforge.net/LBreakout2/']
 
 function install_bin_lbreakout2() {
     

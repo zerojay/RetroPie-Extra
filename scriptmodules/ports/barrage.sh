@@ -14,6 +14,7 @@ rp_module_desc="barrage - Shooting Range action game"
 rp_module_licence="GPL2 https://sourceforge.net/p/lgames/code/HEAD/tree/trunk/barrage/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['http://lgames.sourceforge.net/Barrage/']
 
 function install_bin_barrage() {
      aptInstall barrage

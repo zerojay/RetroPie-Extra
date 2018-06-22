@@ -14,6 +14,8 @@ rp_module_desc="Hurrican - Turrican Clone"
 rp_module_help="Hurrican can only be played in 640x480 so to avoid huge black borders everywhere, use runcommand to set Hurrican to run at 640x480 or 720x480 if aspect ratio matters to you. There are minor off-by-one errors in the graphics everywhere. Nothing I can do about that at the moment so please do not report it as a bug to me, but upstream instead."
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['https://sourceforge.net/projects/hurricane/']
+
 
 function depends_hurrican() {
     local depends=(subversion libsdl-image1.2-dev libmodplug-dev bc)

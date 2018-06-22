@@ -14,6 +14,7 @@ rp_module_desc="Funny Boat. A side scrolling boat shooter with waves."
 rp_module_licence="GPL2 https://sourceforge.net/p/funnyboat/code/HEAD/tree/trunk/LICENSE-CODE.txt?format=raw"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://sourceforge.net/projects/funnyboat/']
 
 function install_bin_funnyboat() {
     aptInstall funnyboat

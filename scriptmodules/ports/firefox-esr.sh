@@ -14,6 +14,7 @@ rp_module_desc="FireFox-ESR - Formally known as IceWeasel, the Rebranded Firefox
 rp_module_licence="MPL2 https://www.mozilla.org/media/MPL/2.0/index.815ca599c9df.txt"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://www.mozilla.org/en-US/firefox/organizations/']
 
 function depends_firefox-esr() {
     getDepends xorg matchbox xserver-xorg-legacy

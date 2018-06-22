@@ -15,6 +15,7 @@ rp_module_help="Because this uses X, you may find that you are unable to control
 rp_module_licence="GPL2 https://www.gnu.org/licenses/gpl-2.0.txt"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://perso.b2b2c.ca/~sarrazip/dev/burgerspace.html']
 
 function install_bin_burgerspace() {
     aptInstall burgerspace xserver-xorg-legacy

@@ -14,6 +14,7 @@ rp_module_desc="breaker - Arkanoid Clone"
 rp_module_licence="GPL2 https://ayera.dl.sourceforge.net/project/breaker10/source/GNU-GPL-2.0.txt"
 rp_module_section="exp"
 rp_module_flags="!x86 !mali"
+rp_module_sites=['https://sourceforge.net/projects/breaker10/']
 
 function depends_breaker() {
     getDepends libsdl2-dev unzip

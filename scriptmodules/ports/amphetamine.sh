@@ -15,6 +15,7 @@ rp_module_help="This game requires a keyboard."
 rp_module_licence="GPL2 https://www.gnu.org/licenses/gpl-2.0.txt"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://libregamewiki.org/Amphetamine']
 
 function install_bin_amphetamine() {
     aptInstall amphetamine amphetamine-data

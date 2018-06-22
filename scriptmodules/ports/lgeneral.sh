@@ -14,6 +14,7 @@ rp_module_desc="lgeneral - Open Source strategy game"
 rp_module_licence="GPL2 https://sourceforge.net/p/lgames/code/HEAD/tree/trunk/lgeneral/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['http://lgames.sourceforge.net/LGeneral/']
 
 function install_bin_lgeneral() {
      aptInstall lgeneral

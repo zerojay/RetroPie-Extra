@@ -14,6 +14,7 @@ rp_module_desc="ltris - Open Source Tetris game"
 rp_module_licence="GPL2 https://sourceforge.net/p/lgames/code/HEAD/tree/trunk/ltris/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['http://lgames.sourceforge.net/LTris/']
 
 function install_bin_ltris() {
      aptInstall ltris

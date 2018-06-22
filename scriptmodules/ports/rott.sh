@@ -15,6 +15,7 @@ rp_module_licence="GPL2 http://svn.icculus.org/*checkout*/rott/trunk/COPYING?rev
 rp_module_help="Please add your full version ROTT files to $romdir/ports/$md_id/ to play."
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['http://www.icculus.org/rott/']
 
 function depends_rott() {
     getDepends libsdl1.2-dev libsdl-mixer1.2-dev automake autoconf subversion unzip

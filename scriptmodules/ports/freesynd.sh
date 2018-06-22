@@ -15,6 +15,7 @@ rp_module_licence="GPL2 https://sourceforge.net/p/freesynd/code/HEAD/tree/freesy
 rp_module_help="Please place your required Syndicate data files in /opt/retropie/ports/freesynd."
 rp_module_section="exp"
 rp_module_flags="!x86 !mali"
+rp_module_sites=['https://sourceforge.net/projects/freesynd/']
 
 function depends_freesynd() {
     getDepends libsdl1.2-dev libsdl-mixer1.2-dev subversion libsdl-image1.2-dev libpng12-dev cmake

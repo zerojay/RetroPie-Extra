@@ -14,7 +14,8 @@ rp_module_desc="Warmux - Worms Clone"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/yeKcim/warmux/master/LICENSE"
 rp_module_section="exp"
 rp_module_flags="!mali"
- 
+rp_module_sites=['https://www.github.com/yeKcim/warmux/']
+
 function install_bin_warmux() {
     aptInstall warmux
 }

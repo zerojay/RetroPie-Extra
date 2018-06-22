@@ -14,6 +14,7 @@ rp_module_desc="Bermuda Syndrome - Open Source Engine"
 rp_module_help="Please copy your Bermuda Syndrome data files to $romdir/ports/$md_id before running the game."
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://lgdb.org/game/bermuda_syndrome']
 
 function depends_bermudasyndrome() {
     getDepends libsdl1.2-dev

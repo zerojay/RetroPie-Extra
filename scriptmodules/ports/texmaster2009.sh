@@ -14,6 +14,7 @@ rp_module_desc="Texmaster2009 - Tetris TGM Clone"
 rp_module_licence="Unknown/Freeware"
 rp_module_section="exp"
 rp_module_flags="!x86 !mali"
+rp_module_sites=['http://tetris.wikia.com/wiki/Texmaster']
 
 function depends_texmaster2009() {
     getDepends wiringpi libsdl1.2-dev p7zip

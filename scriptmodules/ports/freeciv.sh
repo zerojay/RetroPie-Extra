@@ -14,6 +14,7 @@ rp_module_desc="freeciv - Open Source Civilization game"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/freeciv/freeciv/master/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://www.github.com/freeciv/freeciv']
 
 function depends_freeciv() {
     # Using xorg/xinit fixes issue where game couldn't get past opening menu screen.

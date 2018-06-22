@@ -15,6 +15,7 @@ rp_module_help="ROM Extensions: .7z .a52 .bin .zip .7Z .A52 .BIN .ZIP\n\nCopy yo
 rp_module_licence="GPL http://kat5200.jillybunch.com/doc/index.html"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
+rp_module_sites=['http://kat5200.jillybunch.com/']
 
 function depends_kat5200() {
     getDepends libsqlite3-dev zlib1g zlib1g-dev libsdl2-dev libsdl2-image-dev libguichan-dev

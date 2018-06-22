@@ -13,6 +13,7 @@ rp_module_id="gamemaker"
 rp_module_desc="GameMaker - Games for the Raspberry Pi"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
+rp_module_sites=['https://www.yoyogames.com/gamemaker']
 
 function depends_gamemaker() {
     getDepends libopenal-dev

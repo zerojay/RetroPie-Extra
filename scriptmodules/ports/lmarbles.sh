@@ -14,6 +14,7 @@ rp_module_desc="lmarbles - Open Source Atomix game"
 rp_module_licence="GPL2 https://sourceforge.net/p/lgames/code/HEAD/tree/trunk/lmarbles/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['http://lgames.sourceforge.net/LMarbles/']
 
 function install_bin_lmarbles() {
      aptInstall lmarbles

@@ -14,6 +14,7 @@ rp_module_desc="Kodi - Open source home theatre software"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/xbmc/xbmc/master/LICENSE.GPL"
 rp_module_section="exp"
 rp_module_flags="!mali"
+rp_module_sites=['https://www.github.com/xbmc/xbmc/']
 
 function depends_kodi-extra() {
     if isPlatform "rpi"; then
