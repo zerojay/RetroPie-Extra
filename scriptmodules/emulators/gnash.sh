@@ -18,7 +18,6 @@ rp_module_flags="!mali !kms"
 
 function depends_gnash() {
 	getDepends xinit xorg
-	sudo chmod ug+s /usr/lib/xorg/Xorg #Fixes sudo permissions bug for X
 }
 
 function install_bin_gnash() {
