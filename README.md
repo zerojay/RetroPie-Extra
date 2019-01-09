@@ -1,4 +1,4 @@
-**Note** - This repository is no longer maintained. Please feel free to fork it and take it over for the Retropie community as I am no longer using it and no longer have time to do any work with it. To those of you who have made an effort and contributed, you have my endless thanks and respect.
+**Note** - This repository is a fork from zerojay's repository which was unmaintained. A lot of stuff is old and might not be working as intended with recent RetroPie.
 
 # RetroPie-Extra
 
