@@ -46,5 +46,5 @@ function configure_corsixth() {
     mkdir "$home/.config/CorsixTH"
     moveConfigDir "$home/.config/CorsixTH" "$md_conf_root/$md_id"
 
-    addPort "$md_id" "corsixth" "CorsixTH - Theme Hospital Engine" "$md_inst/CorsixTH/CorsixTH"
+    addPort "$md_id" "corsixth" "CorsixTH - Theme Hospital Engine" "$md_inst/bin/corsix-th"
 }
