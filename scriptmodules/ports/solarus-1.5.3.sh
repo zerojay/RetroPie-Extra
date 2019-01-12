@@ -32,19 +32,19 @@ function build_solarus() {
     mkdir build
     cd build
     cmake .. -DCMAKE_INSTALL_PREFIX="$md_inst" -DSOLARUS_GUI=OFF
-    make
+    make -j3
     cd ../zsdx-1.11.0
     cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
-    make
+    make -j3
     cd ../zsxd-1.11.0
     cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
-    make
+    make -j3
     cd ../zelda-roth-se-1.1.0
     cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
-    make
+    make -j3
     cd ../zelda-xd2-mercuris-chess-v1.0.6
     cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
-    make
+    make -j3
     cd ../zbom
     cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
     make -j3
