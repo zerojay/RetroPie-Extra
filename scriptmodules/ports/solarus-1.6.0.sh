@@ -64,8 +64,6 @@ function install_solarus() {
     make install
     cd ../zelda-xd2-mercuris-chess-v1.1.0/
     make install
-    echo pabou
-    sleep 60
 }
 
 function configure_solarus() {

@@ -32,8 +32,9 @@ From issues #252/#256:
 - [ ] freedroid
 
 Updated Zelda/Solaris (issue #254)
-- [ ] Solaris 1.6
-- [ ] updated fangames
+- [ ] Solaris 1.6 - waiting for upstream to make new renderer compatible with rpi : https://gitlab.com/solarus-games/solarus/blob/dev/src/graphics/glrenderer/GlRenderer.cpp#L112
+- [X] updated fangames - ready in the 1.6.0 script
+- [ ] read issue #254 again
 
 More Zelda Fangames (issue #252)
 - [ ] Zelda3t
