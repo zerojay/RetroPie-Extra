@@ -25,6 +25,7 @@ function sources_solarus() {
     downloadAndExtract "http://www.zelda-solarus.com/downloads/zsxd/zsxd-1.11.0.tar.gz" "$md_build"
     downloadAndExtract "http://www.zelda-solarus.com/downloads/zelda-roth-se/zelda-roth-se-1.1.0.tar.gz" "$md_build"
     downloadAndExtract "https://gitlab.com/solarus-games/zelda-xd2-mercuris-chess/-/archive/v1.0.6/zelda-xd2-mercuris-chess-v1.0.6.tar.gz" "$md_build"
+    gitPullOrClone "$md_build/zbom" "https://github.com/wrightmat/zbom.git"
 }
 
 function build_solarus() {
@@ -44,12 +45,16 @@ function build_solarus() {
     cd ../zelda-xd2-mercuris-chess-v1.0.6
     cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
     make
+    cd ../zbom
+    cmake . -DCMAKE_INSTALL_PREFIX="$md_inst"
+    make -j3
     md_ret_require=(
         "$md_build/build/solarus-run"
         "$md_build/zsdx-1.11.0/data.solarus"
         "$md_build/zsxd-1.11.0/data.solarus"
         "$md_build/zelda-roth-se-1.1.0/data.solarus"
         "$md_build/zelda-xd2-mercuris-chess-v1.0.6/data.solarus"
+        "$md_build/zbom/data.solarus"
     )
 }
 
@@ -64,6 +69,8 @@ function install_solarus() {
     make install
     cd ../zelda-xd2-mercuris-chess-v1.0.6/
     make install
+    cd ../zbom
+    make install
 }
 
 function configure_solarus() {
@@ -71,6 +78,7 @@ function configure_solarus() {
     addPort "$md_id" "zsxd" "Solarus Engine - Zelda Mystery of Solarus XD" "LD_LIBRARY_PATH=$md_inst/lib $md_inst/bin/solarus-run $md_inst/share/solarus/zsxd/"
     addPort "$md_id" "zelda_roth_se" "Solarus Engine - Zelda Return of the Hylian SE" "LD_LIBRARY_PATH=$md_inst/lib $md_inst/bin/solarus-run $md_inst/share/solarus/zelda_roth_se/"
     addPort "$md_id" "zelda_xd2_mercuris_chess" "Solarus Engine - Zelda XD2 Mercuris Chess" "LD_LIBRARY_PATH=$md_inst/lib $md_inst/bin/solarus-run $md_inst/share/solarus/zelda_xd2_mercuris_chess/"
+    addPort "$md_id" "zbom" "Solarus Engine - Zelda Book of Mudora" "LD_LIBRARY_PATH=$md_inst/lib $md_inst/bin/solarus-run $md_inst/share/solarus/zbom/"
     # symlink the library so it can be found on all platforms
     ln -sf "$md_inst"/lib/*/libsolarus.so "$md_inst/lib"
     ln -sf "$md_inst"/lib/*/libsolarus.so.1 "$md_inst/lib"
