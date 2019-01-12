@@ -29,7 +29,7 @@ function sources_hurrican() {
     svn checkout svn://svn.code.sf.net/p/hurrican/code/trunk "$md_build"
     if isPlatform "rpi"; then
         sed -i 's/-I\/opt\/vc\/include\/interface\/vcos\/pthreads/-I\/opt\/vc\/include\/interface\/vcos\/pthreads -I\/opt\/vc\/include\/interface\/vmcs_host\/linux/' "$md_build/Hurrican/src/Makefile"
-        sed -i 's/-L\/opt\/vc\/lib -g -lmodplug -lSDL_mixer -lSDL_image -lSDL -lGLESv2/-L\/opt\/vc\/lib -g -lmodplug -lSDL_mixer -lSDL_image -lSDL -lGLESv2 -lbcm_host -lEGL/' "$md_build/Hurrican/src/Makefile"
+        sed -i 's/-L\/opt\/vc\/lib -g -lmodplug -lSDL_mixer -lSDL_image -lSDL -lGLESv2/-L\/opt\/vc\/lib -g -lmodplug -lSDL_mixer -lSDL_image -lSDL -lbrcmGLESv2 -lbcm_host -lbrcmEGL/' "$md_build/Hurrican/src/Makefile"
     fi
 }
 
