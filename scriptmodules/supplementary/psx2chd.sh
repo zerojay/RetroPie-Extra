@@ -164,7 +164,7 @@ function fixGameListXML() {
 
 function main() {
 	check_dependencies
-	#compressRoms
+	compressRoms
 	fixDiscNumbers
 	generateM3U
 	cleanUpCueBins
