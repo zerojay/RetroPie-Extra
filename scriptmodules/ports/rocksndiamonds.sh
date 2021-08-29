@@ -20,13 +20,12 @@ function depends_rocksndiamonds() {
 }
 
 function sources_rocksndiamonds() {
-    gitPullOrClone "$md_build" http://git.artsoft.org/rocksndiamonds.git
+    git clone --branch master https://git.artsoft.org/rocksndiamonds.git "$md_build"
 }
 
 function build_rocksndiamonds() {
     make clean
-#   make sdl
-    make sdl2
+    make
     md_ret_require="$md_build"
 }
 
