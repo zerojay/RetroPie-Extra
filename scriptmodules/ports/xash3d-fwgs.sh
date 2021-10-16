@@ -11,7 +11,7 @@
 
 rp_module_id="xash3d-fwgs"
 rp_module_desc="xash3d-fwgs - Half-Life Engine Port"
-rp_module_help="Please add your full version Half-Life data files (everything from the /valve folder) to $romdir/ports/$md_id/valve/ to play."
+rp_module_help="Please add your full version Half-Life data files (everything from the /valve folder) to /home/pi/xash3d-fwgs/valve/ to play."
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 
@@ -23,6 +23,8 @@ function sources_xash3d-fwgs() {
     # Until our pull request is accepted.
     gitPullOrClone "$md_build/$md_id" https://github.com/FWGS/xash3d-fwgs.git
     gitPullOrClone "$md_build/hlsdk" https://github.com/FWGS/hlsdk-xash3d.git
+    gitPullOrClone "$md_build/bshiftsdk" https://github.com/FWGS/hlsdk-xash3d.git "bshift"
+    gitPullOrClone "$md_build/opforsdk" https://github.com/FWGS/hlsdk-xash3d.git "opfor"
 }
 
 function build_xash3d-fwgs() {
@@ -32,6 +34,24 @@ function build_xash3d-fwgs() {
     cd "$md_build/hlsdk"
     ./waf configure -T release
     ./waf build
+    mkdir "$md_build/hlsdk/build/output"
+    mkdir "$md_build/hlsdk/build/output/hlsdk"
+    cp "$md_build/hlsdk/build/cl_dll/client_armv8_32hf.so" "$md_build/hlsdk/build/output/hlsdk/"
+    cp "$md_build/hlsdk/build/dlls/hl_armv8_32hf.so" "$md_build/hlsdk/build/output/hlsdk/"
+    cd "$md_build/bshiftsdk"
+    ./waf configure -T release
+    ./waf build
+    mkdir "$md_build/bshiftsdk/build/output"
+    mkdir "$md_build/bshiftsdk/build/output/bshiftsdk"
+    cp "$md_build/bshiftsdk/build/cl_dll/client_armv8_32hf.so" "$md_build/bshiftsdk/build/output/bshiftsdk/"
+    cp "$md_build/bshiftsdk/build/dlls/bshift_armv8_32hf.so" "$md_build/bshiftsdk/build/output/bshiftsdk/"
+    cd "$md_build/opforsdk"
+    ./waf configure -T release
+    ./waf build
+    mkdir "$md_build/opforsdk/build/output"
+    mkdir "$md_build/opforsdk/build/output/opforsdk"
+    cp "$md_build/opforsdk/build/cl_dll/client_armv8_32hf.so" "$md_build/opforsdk/build/output/opforsdk/"
+    cp "$md_build/opforsdk/build/dlls/opfor_armv8_32hf.so" "$md_build/opforsdk/build/output/opforsdk/"
     md_ret_require=(
         "$md_build/$md_id/build/game_launch/xash3d"
         "$md_build/$md_id/build/engine/libxash.so"
@@ -48,20 +68,33 @@ function install_xash3d-fwgs() {
         "$md_id/build/mainui/libmenu.so"
         "$md_id/build/ref_soft/libref_soft.so"
         "$md_id/build/ref_gl/libref_gl.so"
-        "hlsdk/build/cl_dll/client_armv8_32hf.so"
-        "hlsdk/build/dlls/hl_armv8_32hf.so"
+        "hlsdk/build/output/hlsdk"
+        "bshiftsdk/build/output/bshiftsdk"
+        "opforsdk/build/output/opforsdk"
     )
 
 }
 
 function configure_xash3d-fwgs() {
     mkRomDir "ports/$md_id/valve"
-    ln -s "$romdir/ports/$md_id/valve" "$md_inst/valve"
-    mkdir "$romdir/ports/$md_id/valve/cl_dlls"
-    mkdir "$romdir/ports/$md_id/valve/dlls"
-    cp "$md_build/hlsdk/build/cl_dll/client_armv8_32hf.so" "$romdir/ports/$md_id/valve/cl_dlls/"
-    cp "$md_build/hlsdk/build/dlls/hl_armv8_32hf.so" "$romdir/ports/$md_id/valve/dlls/"
-    chown -R $user:$user "$romdir/ports/$md_id/valve/"
+    ln -s "/home/pi/$md_id/valve" "$md_inst/valve"
+    ln -s "/home/pi/$md_id/bshift" "$md_inst/bshift"
+    ln -s "/home/pi/$md_id/gearbox" "$md_inst/gearbox"
+    mkdir "/home/pi/$md_id/valve/cl_dlls"
+    mkdir "/home/pi/$md_id/valve/dlls"
+    mkdir "/home/pi/$md_id/bshift/cl_dlls"
+    mkdir "/home/pi/$md_id/bshift/dlls"
+    mkdir "/home/pi/$md_id/gearbox/cl_dlls"
+    mkdir "/home/pi/$md_id/gearbox/dlls"
+    cp "$md_build/hlsdk/build/output/hlsdk/client_armv8_32hf.so" "/home/pi/$md_id/valve/cl_dlls/"
+    cp "$md_build/hlsdk/build/output/hlsdk/hl_armv8_32hf.so" "/home/pi/$md_id/valve/dlls/"
+    cp "$md_build/bshiftsdk/build/output/bshiftsdk/client_armv8_32hf.so" "/home/pi/$md_id/bshift/cl_dlls/"
+    cp "$md_build/bshiftsdk/build/output/bshiftsdk/bshift_armv8_32hf.so" "/home/pi/$md_id/bshift/dlls/"
+    cp "$md_build/opforsdk/build/output/opforsdk/client_armv8_32hf.so" "/home/pi/$md_id/gearbox/cl_dlls/"
+    cp "$md_build/opforsdk/build/output/opforsdk/opfor_armv8_32hf.so" "/home/pi/$md_id/gearbox/dlls/"
+    chown -R $user:$user "/home/pi/$md_id/valve/"
+    chown -R $user:$user "/home/pi/$md_id/bshift/"
+    chown -R $user:$user "/home/pi/$md_id/gearbox/"
 
-    addPort "$md_id" "xash3d-fwgs" "xash3d-fwgs - Half-Life Engine" "pushd $romdir/ports/$md_id/; LD_LIBRARY_PATH=$md_inst $md_inst/xash3d -width 1280 -height 720 -fullscreen -console; popd" 
+    addPort "$md_id" "xash3d-fwgs" "xash3d-fwgs - Half-Life Engine" "pushd /home/pi/$md_id/; LD_LIBRARY_PATH=$md_inst $md_inst/xash3d -width 1280 -height 720 -fullscreen -console; popd" 
 }
