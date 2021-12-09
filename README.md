@@ -1,4 +1,8 @@
-Hi. We're back.
+************* Repo is archived/read-only *************
+
+Hi. A combination of my poor health and the targetted harassment by a small group of RetroPie users who believe I owe them my time has made me decide that I can't do this any longer. My enthusiasm for RetroPie has dropped due to these people and I haven't touched my Pi in a year. Also, I've spent a significantly greater amount of time on tinkering and playing around with emulators and I just want to get back to actually enjoying the games themselves again. 
+
+To those of you who have contributed and shown interest in my work, thank you. It's because of you that I worked so hard on this over the years and it's because of you that I am archiving this and not just deleting the repository outright. I'm hoping that someone within the RetroPie community will step up, clone the repo and keep the good times rolling for you all. Have fun, and I'm sure that you'll see me around here and there in various retrogaming communities.
 
 # RetroPie-Extra
 
